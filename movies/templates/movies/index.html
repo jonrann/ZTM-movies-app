@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies App Homepage</title>
+</head>
+<body>
+    <h1>My fav Movies</h1>
+    {% if movies %}
+        {% for movie in movies %}
+            <h3>{{ movie|title }}</h3>
+        {% endfor %}
+    {% else %}
+        <h3>No movies</h3>
+    {% endif %}
+
+</body>
+</html>
