@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block web_title %} <title>My Webpage</title> {% endblock web_title %}
+    {% load static %}
+</head>
+<body>
+    <h1>Imagine this is a navbar that every single web page will have</h1>
+    <div>
+        <a href="{% url 'homePage' %}">Fav movies</a>
+        <a href="{% url 'aboutMePage' %}">About</a>
+    </div>
+    {% block title %} <h1>Title here</h1> {% endblock title %}
+    {% block content %} {% endblock content %}
+</body>
+</html>

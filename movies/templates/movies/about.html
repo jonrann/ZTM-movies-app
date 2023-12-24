@@ -1,21 +1,19 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Page</title>
-</head>
-<body>
-    <h1>This is a new about page</h1>
-    <h2>About Me:</h2>
-    <ul>
-        {% if information %}
-                <p>First Name: {{ information.first_name }}</p>
-                <p>Last Name: {{ information.last_name}} </p>
-                <p>Age: {{ information.age }}</p>
-        {% else %}
-            <p>No information</p>
-        {% endif %}
-    </ul>
-</body>
-</html>
+{% extends "movies/_base.html" %}
+
+{% block web_title %} <title>About Page</title> {% endblock web_title %}
+
+{% block title %} <h1>This is a new about page</h1> {% endblock title %}
+{% block content %}
+<h2>About Me:</h2>
+{% load static %}
+<img style="width:100px;" src="{% static 'img/spiderman.jpg' %}" alt="spiderman_me">
+<ul>
+    {% if information %}
+            <p>First Name: {{ information.first_name }}</p>
+            <p>Last Name: {{ information.last_name}} </p>
+            <p>Age: {{ information.age }}</p>
+    {% else %}
+        <p>No information</p>
+    {% endif %}
+</ul>
+{% endblock content %}
